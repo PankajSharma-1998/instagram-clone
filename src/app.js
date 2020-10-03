@@ -29,7 +29,6 @@ app.use(body.json());
 app.use('/',user_router);
 app.use('/post',post_router);
 
-process.env.NODE_ENV = 'production';
 // also not doing error handling but will do in next update.
 
 if(process.env.NODE_ENV === 'production'){
