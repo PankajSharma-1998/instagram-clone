@@ -20,6 +20,9 @@ const ProfileImage_preview = (props) => {
 const[condition,setCondition] = useState(!false);
 const[Comment_data,setComment_data] = useState([]);
 const[likes,setlikes] = useState([]);
+//flag of like btn;
+
+const[flag,setflag] = useState(true);
  
  
 const userId = localStorage.getItem('user_id');
@@ -27,6 +30,9 @@ const userId = localStorage.getItem('user_id');
  
  const like = (id) => {
   
+if(flag){
+
+    setflag(false);
  const data = {postId:id}
 
  const token = localStorage.getItem('jwtkey');
@@ -37,18 +43,24 @@ const userId = localStorage.getItem('user_id');
       }).then(res=>{
           //console.log(res);
           if(res.status === 200){
-
+ 
           setlikes([...res.data.like]);
         window.location.reload();
     }
       }).catch(err=>{
+        setflag(true);
           //console.log(err);
           NotifyMe('error','Try Again!');
       });
  }
+
+}
  
  const unlike = (id) => {
-     
+
+    if(flag){
+        setflag(false);
+    
      const data = {postId:id}
       // console.log(data);
      const token = localStorage.getItem('jwtkey');
@@ -59,22 +71,26 @@ const userId = localStorage.getItem('user_id');
           }).then(res=>{
               //console.log(res);
               if(res.status === 200){
-
+             
+                setflag(false);
               setlikes([...res.data.like]);
               //history.push('/profile');
         }
                  window.location.reload();
           }).catch(err=>{
+              setflag(true);
              // console.log(err);
           NotifyMe('error','Try Again!')
             });
  }
-
+ 
+}
  
 const submit_comment = (id) => {
    
     //console.log(text);
-
+if(flag){
+    setflag(false);
     const data = {postId:id,text}
     //console.log(data);
   const token = localStorage.getItem('jwtkey');
@@ -85,18 +101,19 @@ const submit_comment = (id) => {
    
         }).then(res=>{
             if(res.status === 200){
-
+       
         setComment_data([...res.data.comment]);  
    
 }
 
     }).catch(err=>{
-   
+        setflag(true);
         //console.log(err);
        NotifyMe('error','Comment cant be saved, try again!');
     });
 
 
+}
 }
 
 const delete_post = async (post_Id) => {

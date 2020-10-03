@@ -18,7 +18,11 @@ const[followingPost,setFollowingPost] = useState([]);
 //to get my posts;
 const[myPost,setmyPost] = useState([]);
 //toggler
-const[toggle,settoggle] = useState(true);   
+const[toggle,settoggle] = useState(true);
+
+//flag of like btn;
+
+const[flag,setflag] = useState(true);
 
 //used to set the text for commnet;
 const[text,settext] = useState("");
@@ -45,6 +49,9 @@ const userId = localStorage.getItem('user_id');
 // id of a post to which i m liking;
 const like = (id) => {
 
+if(flag){
+
+    setflag(false);    
 const data = {postId:id}
 
 const token = localStorage.getItem('jwtkey');
@@ -56,23 +63,29 @@ headers: {"Authorization": "Bearer "+token}
     }).then(res=>{
        
         if(res.status === 200){
-
+     
        setlikes([...res.data.like]);
        window.location.reload();
 
     }  
 
      }).catch(err=>{
- 
+
+        setflag(true);
         console.log(err);
  
     });
 
 }
 
+}
+
 // id of post to which i unliking;
 const unlike = (id) => {
-    
+   
+ if(flag) {
+     
+      setflag(false);
     const data = {postId:id}
       
     const token = localStorage.getItem('jwtkey');
@@ -82,18 +95,20 @@ const unlike = (id) => {
             headers: {"Authorization": "Bearer "+token}
       
         }).then(res => {
-      
+           
             if(res.status === 200){
-
+   
              setlikes([...res.data.like]);
             window.location.reload();
 
             }  
       
             }).catch(err => {
-             
+                setflag(true);
                 console.log(err);
          });
+}
+
 }
 
 
@@ -193,6 +208,9 @@ const submit_comment = (id) => {
    
 //id of post on which u r commenting;
 // and text data;
+if(flag){
+
+    setflag(false);
     const data = { postId:id, text }
    
   const token = localStorage.getItem('jwtkey');
@@ -204,13 +222,15 @@ const submit_comment = (id) => {
         }).then(res => {
           
             if(res.status === 200){
-
+    
         setComment_data([...res.data.comment]);  
         window.location.reload();
 }
 
        }).catch(err => {
-       
+        
+        setflag(true);
+
         NotifyMe('error','Try Again!');
        
         });
@@ -218,7 +238,7 @@ const submit_comment = (id) => {
 
 }
 
-
+}
 // use to toggle the comment box by using id of a particular post;
 const comment_box_toggler = (id, condition) => {
    
@@ -238,8 +258,8 @@ const comment_box_toggler = (id, condition) => {
 
 
     return (
-     
-     <>
+          
+    <>
 
  {Allpost.length !== 0 ?   
 
@@ -258,6 +278,7 @@ return(
  set 'user/params'  for route otherwise route will not set params;*/}
   
   {/*sending guestprofile data of by using redux, which contains a Profile_data obj as methode; */}
+
 <NavLink style={{textDecoration: 'none'}} to={"/guestProfile/"+x.postedBy._id} onClick={()=>{props.profile_data.Profile_data(x)}}>
    
        <div className="home-toolbar">
