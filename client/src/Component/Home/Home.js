@@ -49,7 +49,7 @@ const data = {postId:id}
 
 const token = localStorage.getItem('jwtkey');
 
-axios.put('http://localhost:8080/post/like',data,{
+axios.put('https://cloned-insta.herokuapp.com/post/like',data,{
 
 headers: {"Authorization": "Bearer "+token}
      
