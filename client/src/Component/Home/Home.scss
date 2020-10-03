@@ -1,0 +1,343 @@
+
+.home-content{
+max-width:800px;
+margin:auto; 
+margin-top:20px;
+border:1px solid lightgrey;
+
+.home-toolbar{
+
+             padding:10px 10px;
+             box-sizing: border-box;
+             border-bottom:1px solid lightgrey;          
+             display:flex;
+             flex-direction:row;
+             align-items:center;
+           
+
+      img{
+
+    width:50px;
+    height:50px;
+    clip-path:circle(50%);
+
+      }  
+        
+   span{
+
+    color:black;
+    padding:10px;
+    font-size:x-large;
+
+   }     
+        
+        }
+ 
+ 
+  
+ .img-container{
+
+    max-width:500px;
+
+    margin:auto;
+     
+.home-img{
+   
+width:100%;
+height:100%;
+
+}
+
+}
+
+.title{
+
+    font-weight: bold;
+    font-size:large;
+    padding:20px 10px;
+
+
+}
+
+.content{
+    font-size:medium;
+    padding:20px 10px;
+}
+
+i[like]{
+    
+    font-size:xx-large;
+    padding:15px 10px;
+    cursor: pointer;
+
+} 
+
+i[unlike]{
+
+color:red;
+font-size:xx-large;
+padding:15px 10px;
+cursor: pointer;
+
+} 
+
+i[class="fa fa-comment-o"]{
+
+    font-size:xx-large;
+    margin-bottom:0px;
+    padding:15px 0px;
+    
+    cursor: pointer;
+}
+
+
+
+i[class="fa fa-trash"]{
+
+    float:right;
+    font-size:x-large;
+    padding:10px;
+    cursor: pointer;
+
+}
+
+
+.like-counter{
+
+    font-size:x-large;
+    padding:20px 8px;
+    margin-top:5px;
+}
+
+
+.comment-div{
+
+    padding:10px 10px;
+
+    input{
+       
+        width:90%;
+        height:40px;
+        border-color: transparent;
+        border-bottom: 2px solid black;
+        outline: none;
+
+    }
+:hover{
+
+    border-bottom: 2px solid teal;
+   cursor: pointer;
+    
+}
+
+    i{
+
+    font-size:xx-large;
+    color:black;
+    position: relative;
+    top:5px;
+    right:30px;
+
+    }
+
+
+}
+
+
+.comment-box{
+
+display:flex;
+flex-direction:column;
+flex-flow: column;
+width:100%;
+height:200px;
+overflow:auto;
+background-color:#fafafa;
+position:relative;
+bottom:0px;
+animation:comment 1s 0s 1 ease-in-out;
+
+.comments{
+
+    padding:10px;
+    box-shadow:2px 2px 2px lightgrey;
+
+}
+
+.comments::first-line{
+
+    font-size:large;
+    font-weight: bold;
+    margin-bottom:5px;
+}
+
+.no-comment{
+
+text-align: center;
+line-height:200px;
+font-weight: bold;
+font-size:large;
+background-color:#f5f5f5;
+
+}
+i[class="fa fa-comments"]{
+
+    font-size:x-large;
+    padding:10px;
+}
+
+}
+
+
+.comment-box::-webkit-scrollbar-thumb{
+    background:lightgrey;
+    border-radius:20px;
+}
+
+.comment-box::-webkit-scrollbar{
+   
+    width:10px;
+
+}
+
+
+
+.colapse{
+
+    animation:colapse 1s 0s 1 ease-in-out;
+}
+
+}
+
+.spinners{
+    
+    height:100%;
+    width:100%;
+
+}
+
+
+@media screen and (max-width:500px){
+
+.home-content{
+
+    border-left: transparent;
+    border-right:transparent;
+
+    .home-toolbar{
+
+img{
+
+    width:45px;
+    height:45px;
+}
+        span{
+
+            font-size:larger;
+        }  
+      }
+      
+      i[like]{
+    
+        font-size:x-large;
+    
+    } 
+    
+    i[unlike]{
+    
+
+    font-size:x-large;
+    
+    } 
+
+    
+i[class="fa fa-comment-o"]{
+    font-size:x-large;
+    
+}
+
+ .like-counter{
+
+    font-size:larger;
+ }   
+.comment-div{
+
+    i{
+        font-size:x-large;
+    }
+}
+
+
+
+    }
+
+}
+
+@keyframes comment{
+
+    0%{
+
+        height:0px;
+    }
+
+100%{
+    height:200px;
+}
+
+}
+
+@keyframes colapse{
+
+    0%{
+
+        height:200px;
+    }
+100%{
+    height:0px;
+}
+
+}
+
+
+@keyframes xyz{
+
+    0%{
+
+    border-bottom-color:#01579b
+
+        
+    }
+
+50%{
+
+    border-bottom-color:#0097a7; 
+}    
+
+100%{
+  
+    border-bottom-color:teal;
+}
+
+}
+
+
+@keyframes loader{
+
+    0%{
+
+     color:#ff5252;
+
+        
+    }
+
+50%{
+
+    color:#d500f9; 
+}    
+
+100%{
+  
+    color:teal;
+}
+
+}

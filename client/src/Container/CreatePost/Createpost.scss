@@ -1,0 +1,151 @@
+
+.create-post{
+
+  width:70%;
+  margin:auto;
+  border:1px solid black;
+  box-shadow: 5px 5px 5px grey;
+  margin-top:50px;
+
+   header{
+
+        h1{
+            padding:20px;
+            text-align: center;
+        }
+    }
+     
+input[type="text"],button{
+
+    margin:20px 4%;
+    width:90%;
+    height:40px;
+    outline:none;
+    border-color: transparent;
+    border-bottom:2px solid teal;  
+  
+}
+
+input[type="text"]::placeholder{
+
+    font-size: larger;
+    position: relative;
+    bottom: 0px;
+
+}
+
+
+input:focus,input:hover{
+    
+    box-shadow:2px 2px 2px teal;
+ }   
+
+
+
+label{
+
+// hiding the default input type file tags;    
+border-color:transparent;
+display:block;
+background-color:#1565c0;
+color:white;
+font-size:larger;
+border-radius:2px;
+padding:10px;
+margin:10px 4%;
+border:1px solid black;
+width:88.5%;
+text-align:center;
+
+input[type="file"]{
+    
+  display:none;
+    
+}
+
+
+}
+
+button{
+
+    margin-bottom:20px;
+    width:91%;
+    color:white;
+    font-size:larger;
+    background-color:#1565c0 ;
+    border-radius:1px solid black;
+    border-color: transparent;
+    margin-bottom:80px;
+}
+
+label:hover,button:hover{
+   
+    background-color:white;
+    border:1px solid #1565c0;
+    color:#1565c0;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px #1565c0;
+}
+
+
+}
+
+
+@media screen and (max-width:1046px){
+
+    .create-post{
+
+width:80%;
+
+    label{
+
+        width:88.1%;
+    }
+
+
+}    
+
+
+}
+
+@media screen and (max-width:790px){
+
+    .create-post{
+
+width:90%;
+
+    label{
+
+        width:87.5%;
+    }
+
+}    
+
+}
+
+@media screen and (max-width:540px){
+
+    .create-post{
+
+width:90%;
+
+    label{
+
+        width:86.5%;
+    }
+
+}    
+
+
+}
+
+@media screen and (max-width:400px){
+
+    .create-post{
+
+width:100%;
+
+}    
+
+
+}
