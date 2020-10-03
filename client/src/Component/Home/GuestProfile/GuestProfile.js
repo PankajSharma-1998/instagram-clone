@@ -27,7 +27,7 @@ const user_info = localStorage.getItem('user_id');// loggedin userId;
 
       const token = localStorage.getItem('jwtkey');
       
-           axios.put('http://localhost:8080/follow/',data,{
+           axios.put('https://cloned-insta.herokuapp.com/follow/',data,{
       
               headers: {"Authorization": "Bearer "+token}
            
@@ -53,7 +53,7 @@ const user_info = localStorage.getItem('user_id');// loggedin userId;
 
       const token = localStorage.getItem('jwtkey');
       
-           axios.get(`http://localhost:8080/unfollow/${id}`,{
+           axios.get(`https://cloned-insta.herokuapp.com/unfollow/${id}`,{
       
               headers: {"Authorization": "Bearer "+token}
       
@@ -79,7 +79,7 @@ const user_info = localStorage.getItem('user_id');// loggedin userId;
          const token = localStorage.getItem('jwtkey');
         
          // note donot put url/user/:${id} instaed put url/user/${id} to get req.params at server otherwise req will failed;
-         const response = await axios.get(`http://localhost:8080/user/${id}`,{
+         const response = await axios.get(`https://cloned-insta.herokuapp.com/user/${id}`,{
         
             headers: {"Authorization": "Bearer "+token}
 

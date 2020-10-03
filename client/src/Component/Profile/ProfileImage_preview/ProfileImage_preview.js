@@ -31,7 +31,7 @@ const userId = localStorage.getItem('user_id');
 
  const token = localStorage.getItem('jwtkey');
  
-      axios.put('http://localhost:8080/post/like',data,{
+      axios.put('https://cloned-insta.herokuapp.com/post/like',data,{
  
          headers: {"Authorization": "Bearer "+token,"App-name":"Instagram-clone"}
       }).then(res=>{
@@ -53,7 +53,7 @@ const userId = localStorage.getItem('user_id');
       // console.log(data);
      const token = localStorage.getItem('jwtkey');
      
-          axios.put('http://localhost:8080/post/unlike',data,{
+          axios.put('https://cloned-insta.herokuapp.com/post/unlike',data,{
      
              headers: {"Authorization": "Bearer "+token,"App-name":"Instagram-clone"}
           }).then(res=>{
@@ -79,7 +79,7 @@ const submit_comment = (id) => {
     //console.log(data);
   const token = localStorage.getItem('jwtkey');
   
-       axios.put('http://localhost:8080/post/comment',data,{
+       axios.put('https://cloned-insta.herokuapp.com/post/comment',data,{
   
           headers: {"Authorization": "Bearer "+token,"App-name":"Instagram-clone"}
    
@@ -105,7 +105,7 @@ const delete_post = async (post_Id) => {
    // console.log(post_Id);
 
     try{
-    const delete_status = await axios.delete(`http://localhost:8080/post/deletePost/${post_Id}`,{
+    const delete_status = await axios.delete(`https://cloned-insta.herokuapp.com/post/deletePost/${post_Id}`,{
 
         headers: {"Authorization": "Bearer "+token,"App-name":"Instagram-clone"}
     });

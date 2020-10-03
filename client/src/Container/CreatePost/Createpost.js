@@ -60,7 +60,7 @@ if(file_data.status == 200){
   const data = { title, content, url }
 
 //posting post data to server;  
-const server_response = await axios.post('http://localhost:8080/post/posts',data,{
+const server_response = await axios.post('https://cloned-insta.herokuapp.com/post/posts',data,{
   
 // setting headers to get authenticated from server;
  headers: {"Authorization": "Bearer "+token}

@@ -35,7 +35,7 @@ const submit = async(e) => {
 
    try{
 
-   const response = await axios.post(' http://localhost:8080/signup',data);
+   const response = await axios.post('https://cloned-insta.herokuapp.com/signup',data);
 
    if(response.status === 200){
     

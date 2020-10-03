@@ -31,7 +31,7 @@ e.preventDefault();
    
    try{
      
-    const update_data = await axios.put('http://localhost:8080/update_password',data,{
+    const update_data = await axios.put('https://cloned-insta.herokuapp.com/update_password',data,{
 
         headers: {"Authorization": "Bearer "+token,"App-name":"Instagram-clone"}
       

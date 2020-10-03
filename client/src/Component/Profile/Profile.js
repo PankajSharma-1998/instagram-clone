@@ -29,7 +29,7 @@ if(true){
       const token = localStorage.getItem('jwtkey');
       // geeting logged in user profile data by jwt setted req.user at server;
 
-           axios.get('http://localhost:8080/loggedIN_User_Profile',{
+           axios.get('https://cloned-insta.herokuapp.com/loggedIN_User_Profile',{
       
               headers: {"Authorization": "Bearer "+token}
            }).then(res=>{
@@ -71,7 +71,7 @@ try{
       const token = localStorage.getItem('jwtkey');
       const data = { profile_pic }
       
-     const server_response = await axios.put('http://localhost:8080/updateProfile_picture',data,{
+     const server_response = await axios.put('https://cloned-insta.herokuapp.com/updateProfile_picture',data,{
       
      headers: {"Authorization": "Bearer "+token,"App-name":"Instagram-clone"}
      

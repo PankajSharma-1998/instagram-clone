@@ -77,7 +77,7 @@ const unlike = (id) => {
       
     const token = localStorage.getItem('jwtkey');
     
-         axios.put('http://localhost:8080/post/unlike',data,{
+         axios.put('https://cloned-insta.herokuapp.com/post/unlike',data,{
     
             headers: {"Authorization": "Bearer "+token}
       
@@ -105,7 +105,7 @@ if(toggle) {
     
     try{
 
-const response = await axios.get('http://localhost:8080/post/allPosts');
+const response = await axios.get('https://cloned-insta.herokuapp.com/post/allPosts');
 
 if(response.status === 200){
    
@@ -197,7 +197,7 @@ const submit_comment = (id) => {
    
   const token = localStorage.getItem('jwtkey');
   
-       axios.put('http://localhost:8080/post/comment',data,{
+       axios.put('https://cloned-insta.herokuapp.com/post/comment',data,{
   
           headers: {"Authorization": "Bearer "+token}
        

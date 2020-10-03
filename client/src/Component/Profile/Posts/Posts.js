@@ -23,9 +23,9 @@ if(true) {
 
  const token = localStorage.getItem('jwtkey');
 
- const response = await axios.get('http://localhost:8080/post/myPosts',{
+ const response = await axios.get('https://cloned-insta.herokuapp.com/post/myPosts',{
 
-    headers: {"Authorization": "Bearer "+token,"App-name":"Instagram-clone"}
+    headers: {"Authorization": "Bearer "+token}
  });
 
 
